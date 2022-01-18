@@ -24,7 +24,13 @@ namespace AssignmentPortal.Controls
 
             int questions = int.Parse(nudQuestions.Value.ToString());
 
-            var MCQs = new MCQs(ref answers, questions, this.txtID.Text);
+            if (String.IsNullOrWhiteSpace(this.txtID.Text) || String.IsNullOrWhiteSpace(this.txtIdentifier.Text) || String.IsNullOrWhiteSpace(this.txtModuleCode.Text))
+            {
+                MessageBox.Show("Please capture all fields.");
+                return;
+            }
+
+            var MCQs = new MCQs(ref answers, questions, this.txtID.Text, this.txtIdentifier.Text, this.txtModuleCode.Text);
 
             var result = MCQs.ShowDialog();
 
@@ -34,6 +40,26 @@ namespace AssignmentPortal.Controls
                 this.DialogResult = DialogResult.No;
 
             this.Close();
+        }
+
+        private void txtModuleCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdentifier_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudQuestions_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -74,9 +74,9 @@ namespace AssignmentPortal.Controls
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(95, 46);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 17);
+            this.lblEmail.Size = new System.Drawing.Size(81, 21);
             this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "EMAIL";
+            this.lblEmail.Text = "EMAIL/ID";
             // 
             // txtPassword
             // 

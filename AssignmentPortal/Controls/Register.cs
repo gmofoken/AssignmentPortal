@@ -22,7 +22,13 @@ namespace AssignmentPortal.Controls
         {
             var logic = new Logic();
 
-            bool register = logic.RegisterUserAsync(this.txtEmail.Text, this.txtPassword.Text).Result;
+            if (String.IsNullOrWhiteSpace(this.txtEmail.Text) || String.IsNullOrWhiteSpace(this.txtPassword.Text) || String.IsNullOrWhiteSpace(this.txtIdentifier.Text))
+            {
+                MessageBox.Show("Please capture all fields.");
+                return;
+            }
+
+            bool register = logic.RegisterUserAsync(this.txtEmail.Text, this.txtPassword.Text, this.txtIdentifier.Text).Result;
             
             if (register)
             {

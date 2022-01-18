@@ -10,11 +10,13 @@ namespace AssignmentPortal.Models
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Identifier { get; set; }
     }
 
     public class Users
     {
         public int UserId { get; set; }
+        public string Identifier { get; set; }
         public string Email { get; set; }
         public int UserType { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;

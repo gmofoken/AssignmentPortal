@@ -15,6 +15,8 @@ namespace AssignmentPortal.Models
     public class Submission
     {
         public string UniqueID { get; set; }
+        public string StudentID { get; set; }
+        public string ModuleCode { get; set; }
         public List<Answers> Answers { get; set; }
     }
 
@@ -22,6 +24,8 @@ namespace AssignmentPortal.Models
     {
         public int SubmissionID { get; set; }
         public string UniqueID { get; set; }
+        public string StudentID { get; set; }
+        public string ModuleCode { get; set; }
         public DateTime SubmitedOn { get; set; } = DateTime.Now;
     }
 }

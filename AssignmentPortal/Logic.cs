@@ -35,12 +35,13 @@ namespace AssignmentPortal
             }
         }
 
-        public async Task<bool> RegisterUserAsync(string email, string password)
+        public async Task<bool> RegisterUserAsync(string email, string password, string identifier)
         {
             var user = new UserObject()
             { 
                 Email = email,
-                Password = password
+                Password = password,
+                Identifier = identifier
             };
 
 

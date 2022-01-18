@@ -15,9 +15,11 @@ namespace AssignmentPortal.Controls
     {
         int questionsCount = 0;
         string ID = "";
+        string IDCode = "";
+        string ModuleCode = "";
 
 
-        public MCQs(ref List<Answers> answers, int questions, string uniqueID)
+        public MCQs(ref List<Answers> answers, int questions, string uniqueID, string Identifier, string _ModuleCode)
         {
             InitializeComponent();
 
@@ -25,6 +27,8 @@ namespace AssignmentPortal.Controls
             int count = 1;
             int position = 0;
             ID = uniqueID;
+            IDCode = Identifier;
+            ModuleCode = _ModuleCode;
 
             while (count < (questions + 1))
             {
@@ -83,7 +87,9 @@ namespace AssignmentPortal.Controls
             var submission = new Submission()
             {
                 UniqueID = ID,
-                Answers = answers
+                Answers = answers,
+                StudentID = IDCode,
+                ModuleCode = ModuleCode
             };
 
             var logic = new Logic();
